@@ -1,0 +1,716 @@
+@charset "utf8";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Noto Sans JP", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic Pro", Meiryo, verdana, Osaka, "MS PGothic", sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+:root {
+    --font-color: #444444;
+    --main-color: #0071bc;
+    --sub-color: #82c7e6;
+}
+
+h2 {
+    color: var(--font-color);
+    font-size: 18px;
+    line-height: 3;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 3;
+    color: var(--main-color);
+}
+
+.containers {
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 45px;
+    width: 95%;
+    height: auto;
+}
+
+/* ヘッダー */
+.header-logo,
+.header-top,
+.header-bottom {
+    display: none;
+}
+.sp-header-top {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+div.sp-logo {
+    height: 60px;
+    width: 60px;
+}
+div.sp-logo a{
+    height: 60px;
+    width: 60px;
+    background-color:#fff;
+    display: inline-block;
+}
+
+div.sp-logo img {
+    width: 40px;
+    margin: 14px auto 0;
+}
+
+.menu-icon-list {
+    display: flex;
+
+}
+
+.menu-icon-list li a{
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    background-color:#fff;
+    display: inline-block;
+}
+
+.menu-icon-list li img {
+    width: 15px;
+    height: 20px;
+    margin: 10px auto 0;
+}
+
+.menu-icon-list li span {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.sp-nav {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.sp-nav nav {
+    flex: 1;
+}
+
+.sp-nav nav ul {
+    display: flex;
+}
+
+.sp-nav li {
+    flex: 1;
+}
+
+.sp-nav li a {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.sp-nav li:first-child {
+    background-color: var(--main-color);
+}
+
+.sp-nav li:last-child {
+    background-color: var(--sub-color);
+}
+.sp-nav li a img {
+    height: 27px;
+
+}
+.sp-nav li a span {
+    color: #fff;
+    font-weight: bold;
+}
+
+.sp-nav .nav-btn{
+    width: 50px;
+    height: 50px;
+    background-color: #dbebef;
+}
+
+/* サイドバー */
+.side-bar {
+    position: fixed;
+    top: 210px;
+    right: 0;
+    z-index: 1;
+    display: none;
+}
+.side-bar ul {
+    width: 60px;
+    height: 320px;
+}
+
+.side-bar ul li {
+    height: 50%;
+    background-color: var(--main-color);
+}
+
+.side-bar ul li:last-child {
+    background-color: var(--sub-color);
+}
+.side-bar a {
+    display: block;
+    padding-top: 20px;
+    height: 100%;
+    text-align: center;
+}
+.side-bar span {
+    writing-mode: vertical-rl;
+    color: #fff;
+    font-weight: bold;
+}
+.side-bar img {
+    width: 28px;
+    margin: 0 auto 10px;
+}
+/* メイン画像 */
+
+.main-image {
+    margin-top: 20px;
+    height: 552px;
+    background: center / cover url(images/top_img.jpg);
+    
+}
+
+/* インフォメーション */
+
+.infomation ul li {
+    height: 45px;
+    border-bottom: 1px solid lightgrey;
+}
+.infomation ul li a {
+    font-size: 14px;
+    line-height: 45px;
+}
+
+/* スケジュール */
+
+.schedule {
+    position: relative;
+}
+
+.schedule a {
+    height: 42px;
+    width: 152px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: var(--main-color);
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 21px;
+    display: block;
+    text-align: center;
+    line-height: 42px;
+}
+
+.monthly {
+    margin: 45px auto 0;
+    width: 95%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 35px;
+}
+
+
+/*　注目公演 */
+.featured-bg {
+    width: 100%;
+    height: auto;
+    background-color: rgb(66, 66, 66);
+}
+.featured {
+    text-align: center;
+}
+.featured h3,
+.featured h2 {
+    color: #fff;
+}
+.featured>p {
+    font-size: 14px;
+    line-height: 25px;
+    color: #fff;
+}
+
+.featured-list {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 30px 15px;
+}
+
+.featured-list a {
+    display: block;
+}
+
+.featured-img {
+    width: 100%;
+    max-width: 256px;
+    max-height: 230px;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.featured-list p {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 25px;
+    color: #fff;
+}
+
+/* アバウト */
+
+.about {
+    padding-bottom: 0;
+}
+
+.about h3 {
+    text-align: center;
+}
+
+.about-heading p {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.about-menu h2 {
+    font-size: 15px;
+}
+.about-menu img {
+    margin: 0 auto;
+}
+
+.about-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.about-menu li {
+    width: 48%;
+    height: 42px;
+    border-radius: 21px;
+    border: 1px solid var(--main-color);
+    background-color:#fff;
+    margin-bottom: 30px;
+
+}
+.about-menu li a{
+    display: block;
+    text-align: center;
+    line-height: 42px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+
+
+/* 採用 */
+
+.recruit-bg {
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(images/audition02.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.recruit {
+    text-align: center; 
+    padding-bottom: 0;  
+}
+
+.recruit h3 {
+    color: #fff;
+}
+
+.recruit h2 {
+    color: #fff;
+    font-size: 21px;
+    line-height: 3;
+}
+
+.recruit p {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.recruit-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.recruit-menu li {
+    width: 48%;
+    height: 42px;
+    border-radius: 21px;
+    background-color:#fff;
+    margin-bottom: 30px;
+}
+.recruit-menu li a{
+    display: block;
+    text-align: center;
+    line-height: 42px;
+}
+
+/* 問合せ */
+.contact-bg {
+    width: 100%;
+    height: auto;
+    background-color: #ecf7fb;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact h2 {
+    color: var(--font-color);
+    font-size: 18px;
+    line-height: 3;
+}
+
+.contact-nav li a {
+    height: 108px;
+    width: 100%;
+    display: block;
+    padding-top: 24px;
+}
+
+.contact-nav li {
+    margin-bottom: 18px;
+    background-color: var(--main-color);
+}
+.contact-nav li:last-child {
+    margin-bottom: 0;
+    background-color: var(--sub-color);
+}
+
+.contact-nav img {
+    height: 28px;
+    margin: 0 auto;
+}
+
+.contact-nav p {
+    font-size: 17px;
+    line-height: 30px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* フッター */
+footer {
+    width: 95%;
+    margin: 0 auto;
+    height: auto;
+    padding-top: 30px;
+}
+
+.footer-heading {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.footer-heading .logo {
+    flex: 1;
+    height: auto;
+    margin-top: 15px;
+    margin-right: 35px;
+}
+
+.footer-info {
+    flex: 3;
+    height: auto;
+}
+
+.footer-info-address {
+    font-size: 13px;
+    line-height: 20px;
+}
+.footer-info-tel {
+    display: flex;
+    align-items: center;
+}
+.footer-info-tel img {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.footer-info-tel span{
+    font-size: 22px;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-menu li {
+    width: 48%;
+    height: 42px;
+    border-radius: 21px;
+    border: 1px solid var(--main-color);
+    /* margin-top: 30px; */
+    /* margin-bottom: 10px; */
+
+}
+.footer-menu li a{
+    display: block;
+    text-align: center;
+    line-height: 42px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.policy {
+    text-align: center;
+    margin-bottom: 114px;
+    margin-top: 40px;
+}
+
+.policy a,
+.policy p {
+    font-size: 11px;
+}
+
+.policy a:first-child {
+    margin-right: 10px;
+    padding-right: 15px;
+    border-right: 1px solid var(--font-color);
+}
+
+
+@media (min-width: 768px) {
+
+    header {
+        height: 120px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        background-color:#fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+    .header-logo,
+    .header-top,
+    .header-bottom {
+        display: block;
+    }
+    .header-logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .header-logo a {
+        padding: 40px 20px;
+        display: block;
+        background-color:#fff;
+    }
+
+    .header-logo a img {
+        width: 120px;
+    }
+    .header-top {
+        margin-left: 200px;
+        margin-right: 80px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 22px;
+    }
+
+    .header-top-left {
+        font-size: 13px;
+    }
+
+    .header-top-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-top-right > span {
+        font-size: 24px;
+        margin-right: 42px;
+    }
+
+    
+    .header-top-right img {
+        height: 23px;
+        margin-right: 10px;
+    }
+    
+    .header-top-right a {
+        display: block;
+        display: flex;
+    }
+
+    .header-top-right a span {
+        font-size: 13px;
+    }
+
+    .header-bottom ul {
+        display: flex;
+        margin-left: 200px;
+        margin-top: 20px;
+        margin-right: 80px;
+        justify-content: flex-end;
+    }
+
+    .header-bottom li {
+        padding-right: 20px;
+        margin-right: 20px;
+        border-right: 1px solid lightgrey;
+    }
+
+    .header-bottom li:last-child {
+        padding-right: 0;
+        margin-right: 0;
+        border-right: none;
+    }
+
+    .header-bottom a {
+        display: block;
+    }
+
+
+
+    .sp-header-top {
+        display: none;
+    }
+
+    .sp-nav {
+        display: none;
+    }
+
+    .side-bar {
+        display: block;
+    }
+
+    /* メイン画像 */
+
+    .main-image {
+        max-width: 1280px;
+        margin: 120px auto 0;
+    }
+    /* インフォメーション */
+    .info-wrapper {
+        display: flex;
+        max-width: 1102px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    .info-wrapper .containers{
+        width: 47%;
+    }
+
+   
+    /* 注目公演 */
+    .featured {
+        max-width: 1102px;
+    }
+
+    .featured-list {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: 1fr;
+        gap: 30px;
+    }
+
+    .featured-img {
+        width: 100%;
+        max-width: none;
+        max-height: 304px;
+        object-fit: cover;
+    }
+
+    /* アバウト */
+
+    .about {
+        max-width: 1102px;
+    }
+    .about-menus {
+        display: flex;
+        justify-content: space-between;
+    }
+    .about-menu {
+        width: 48%;
+    }
+
+
+    /* 採用 */
+
+    .recruit {
+        max-width: 1102px;
+    }
+
+    .recruit-menu li {
+        width: 23%;
+    }
+
+    /* 問合せ */
+    .contact {
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    .contact-nav ul {
+        display: flex;
+    }
+
+    .contact-nav ul li {
+        width: 50%;
+        margin-bottom: 0;
+    }
+
+    /* フッター */
+
+    footer {
+        max-width: 1102px;
+
+    }
+
+    .footer-container {
+       display: flex;
+        justify-content: space-between;
+    }
+    .footer-heading {
+        width: 45%;
+    }
+    .footer-menu-container {
+        width: 45%;
+    }
+
+}
